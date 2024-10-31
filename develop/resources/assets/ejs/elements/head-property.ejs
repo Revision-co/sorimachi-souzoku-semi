@@ -1,0 +1,103 @@
+<?php
+  // ----------------------------------------
+  // アーカイブページのオプション取得
+  // ----------------------------------------
+
+  $post_cat_color = '';
+  
+  if(is_archive() || is_single()) {
+    $post_num = get_option('post_num');
+    $post_slug = get_query_var('post_type');
+
+    $i = 1;
+    while ($i <= $post_num) {
+      if($post_slug === get_option('post_slug'.$i)) {
+        $post_name = get_option('post_name'.$i);
+        $post_slug = get_option('post_slug'.$i);
+        $post_enTtl = get_option('post_enTtl'.$i);
+        $post_thumb = get_option('post_thumb'.$i);
+        $post_cat = get_option('post_cat'.$i);
+        $post_tag = get_option('post_tag'.$i);
+        $post_cat_back = get_option('post_cat_back'.$i);
+        $post_cat_color = get_option('post_cat_color'.$i);
+        $post_cat_pattern = get_option('post_cat_pattern'.$i);
+        $post_side_cat = get_option('post_side_cat'.$i);
+        $post_side_month = get_option('post_side_month'.$i);
+        $post_side_radius = get_option('post_side_radius'.$i);
+        $post_detail_thumb = get_option('post_detail_thumb'.$i);
+        $post_ttl_fontSize_pc = get_option('post_ttl_fontSize_pc'.$i);
+        $post_ttl_fontSize_sp = get_option('post_ttl_fontSize_sp'.$i);
+        $post_article_pattern = get_option('post_article_pattern'.$i);
+        $post_pagenav_pattern = get_option('post_pagenav_pattern'.$i);
+        $post_img = get_option('post_img'.$i);
+        $post_display_pc = get_option('post_display_pc'.$i);
+        $post_display_sp = get_option('post_display_sp'.$i);
+      }
+      $i++;
+    }
+  }
+  // ----------------------------------------
+  // 〆アーカイブページのオプション取得
+  // ----------------------------------------
+
+  //-----------------------------------------------------
+  // html スタイル
+  //-----------------------------------------------------
+
+  if(get_option("page_padding_pc") === '大') {
+    $c_inner_pc = '0 calc(50% - 45rem)';
+  } elseif (get_option("page_padding_pc") === '中') {
+    $c_inner_pc = '0 calc(50% - 50rem)';
+  } elseif (get_option("page_padding_pc") === '小') {
+    $c_inner_pc = '0 calc(50% - 55rem)';
+  }
+
+  if(get_option("page_padding_sp") === '大') {
+    $c_inner_sp = '0 3rem';
+  } elseif (get_option("page_padding_sp") === '中') {
+    $c_inner_sp = '0 2rem';
+  } elseif (get_option("page_padding_sp") === '小') {
+    $c_inner_sp = '0 1rem';
+  }
+  echo '
+    '.get_option("ff_link").'
+    <style>
+      :root {
+        --text_color: '.get_option("text_color").';
+        --border_color: '.get_option("border_color").';
+        --background_color: '.get_option("background_color").';
+        --link_color: '.get_option("link_color").';
+        --fs_mv_pc: '.get_option("fs_mv_pc").';
+        --fs_mv_sp: '.get_option("fs_mv_sp").';
+        --fs_ttl_pc: '.get_option("fs_ttl_pc").';
+        --fs_ttl_sp: '.get_option("fs_ttl_sp").';
+        --fs_txt_pc: '.get_option("fs_txt_pc").';
+        --fs_txt_sp: '.get_option("fs_txt_sp").';
+        --lh_pc: '.get_option("lh_pc").';
+        --lh_sp: '.get_option("lh_sp").';
+        --ls_pc: '.get_option("ls_pc").';
+        --ls_sp: '.get_option("ls_sp").';
+        --mv_c_t: '.get_option("mv_c_t").';
+        --mv_h_pc: '.get_option("mv_h_pc").';
+        --mv_h_sp: '.get_option("mv_h_sp").';
+        --post_ttl_fontSize_pc: '.$post_ttl_fontSize_pc.';
+        --post_ttl_fontSize_sp: '.$post_ttl_fontSize_sp.'; 
+        --c_inner_pc: '.$c_inner_pc.';
+        --c_inner_sp: '.$c_inner_sp.';
+        --cat_color: '.$post_cat_color.';
+        --transition: '.get_option("transition").';
+        --ff_ttl: '.explode(":", get_option("ff_ttl"))[1].'
+        --ff_txt: '.explode(":", get_option("ff_txt"))[1].'
+      }
+    </style>
+  ';
+
+  //-----------------------------------------------------
+  // 〆html スタイル
+  //-----------------------------------------------------
+?>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">

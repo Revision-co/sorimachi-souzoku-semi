@@ -1,0 +1,37 @@
+.c-btn01-typeC {
+  font-size: 1.6rem;
+  text-underline-offset: 0.2rem;
+  transition: var(--transition);
+
+  &.is-active,
+  &:hover {
+    color: var(--cat_color);
+  }
+
+  &.is-active {
+    text-decoration: underline;
+    pointer-events: none;
+  }
+
+  &--reverse {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--cat_color);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.8rem;
+      height: 0.8rem;
+      content: "";
+      background: var(--cat_color);
+      border-radius: 9999px;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

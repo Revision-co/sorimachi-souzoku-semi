@@ -1,0 +1,56 @@
+<?php include_once('header.php'); ?>
+
+<?php include( get_template_directory().'/module/mv.php' ); ?>
+<%- include( '../assets/ejs/elements/breadcrumb.ejs' ); %>
+
+<div class="c-inner">
+  <div class="c-content">
+    <div class="p-single">
+      <div class="i-ttl">
+        <div class="i-ttl__top">
+          <p class="i-ttl__date"><?php echo get_the_date( 'Y/m/d' ); ?></p>
+          <?php 
+            $class = '';
+            switch ($post_cat_pattern) {
+              case 'patternA':
+                $class = 'c-btn01-typeA c-btn01-typeA--reverse';
+                break;
+              case 'patternB':
+                $class = 'c-btn01-typeB c-btn01-typeB--reverse';
+                break;
+              case 'patternC':
+                $class = 'c-btn01-typeC c-btn01-typeC--reverse';
+                break;
+            }
+
+            if($post_cat):
+              $cat = get_the_terms($post->ID, $post_slug.'-cat');
+              if(!empty($cat)):
+          ?>
+          <a href="<?php echo home_url($post_slug.'?post-cat='.$cat[0] -> slug);?>" class="i-ttl__cat <?php echo $class; ?>"><?php echo $cat[0] -> name; ?></a>
+          <?php
+              endif;
+            endif;
+          ?>
+        </div>
+        <h2 class="i-ttl__ttl"><?php the_title(); ?></h2>
+      </div>
+      <?php if(!empty($post_detail_thumb) && has_post_thumbnail()): ?>
+      <div class="s-thumbnail">
+        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="" width="100%">
+      </div>
+      <?php endif; ?>
+      <div class="text-editor">
+        <?php the_content(); ?>
+      </div>
+
+      <div class="c-pagenation u-mt-5">
+        <div class="c-pagenation__prev c-pagenation__el"><?php previous_post_link('%link', '<span>前の記事</span>', false ); ?></div>
+        <div class="c-pagenation__list"><a href="../"> <span>一覧へ戻る</span></a></div>
+        <div class="c-pagenation__next c-pagenation__el"><?php next_post_link('%link', '<span>次の記事</span>', false ); ?></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php include_once('footer.php'); ?>

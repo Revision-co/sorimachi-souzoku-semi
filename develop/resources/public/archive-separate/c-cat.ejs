@@ -1,0 +1,72 @@
+<?php 
+  if(!empty($post_cat)):
+    $terms_obj = get_terms($post_slug.'-cat');
+
+    // オブジェクトを連想配列に変換
+    $terms = json_decode(json_encode($terms_obj), true);
+
+    // 連想配列に「すべて」を追加
+    array_unshift($terms, array('name' => 'すべてのカテゴリー','slug' => 'all'));
+?>
+<?php if($post_cat_pattern === 'patternA'): ?>
+<ul class="c-cat c-cat-typeA">
+  <?php
+    foreach($terms as $term):
+      $name = $term['name'];
+      $slug = $term['slug'];
+
+      $active = "";
+
+      $slug = urldecode($slug);
+
+      if($slug === $_GET['post-cat']) {
+        $active = 'is-active';
+      } elseif(empty($_GET['post-cat']) && $name === 'すべてのカテゴリー') {
+        $active = 'is-active';
+      }
+  ?>
+  <li><a href="<?php echo home_url($post_slug.'?post-cat='.$slug);?>" class="c-btn01-typeA <?php echo $active; ?>"><?php echo $term['name']; ?></a></li>
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+<?php if($post_cat_pattern === 'patternB'): ?>
+<ul class="c-cat c-cat-typeB">
+  <?php
+    foreach($terms as $term):
+      $name = $term['name'];
+      $slug = $term['slug'];
+
+      $active = "";
+
+      if($slug === $_GET['post-cat']) {
+        $active = 'is-active';
+      } elseif(empty($_GET['post-cat']) && $name === 'すべてのカテゴリー') {
+        $active = 'is-active';
+      }
+  ?>
+  <li><a href="<?php echo home_url($post_slug.'?post-cat='.$slug);?>" class="c-btn01-typeB <?php echo $active; ?>"><?php echo $term['name']; ?></a></li>
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+<?php if($post_cat_pattern === 'patternC'): ?>
+<ul class="c-cat c-cat-typeC">
+  <?php
+    foreach($terms as $term):
+      $name = $term['name'];
+      $slug = $term['slug'];
+
+      $active = "";
+
+      if($slug === $_GET['post-cat']) {
+        $active = 'is-active';
+      } elseif(empty($_GET['post-cat']) && $name === 'すべてのカテゴリー') {
+        $active = 'is-active';
+      }
+  ?>
+  <li><a href="<?php echo home_url($post_slug.'?post-cat='.$slug);?>" class="c-btn01-typeC <?php echo $active; ?>"><?php echo $term['name']; ?></a></li>
+  <?php endforeach; ?>
+</ul>
+<?php 
+    endif;
+  endif;
+?>

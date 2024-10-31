@@ -1,0 +1,23 @@
+.c-inner {
+  padding: var(--c_inner_pc) !important;
+
+  @media (--mobile) {
+    padding: var(--c_inner_sp) !important;
+  }
+}
+
+.c-pc-inner {
+  padding: var(--c_inner_pc) !important;
+
+  @media (--mobile) {
+    padding: 0 !important;
+  }
+}
+
+.c-sp-inner {
+  padding: 0 !important;
+
+  @media (--mobile) {
+    padding: var(--c_inner_sp) !important;
+  }
+}

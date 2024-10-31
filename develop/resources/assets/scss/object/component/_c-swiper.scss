@@ -1,0 +1,61 @@
+.swiper-typeA {
+  &,
+  &-nav {
+    width: 85%;
+
+    @media (--mobile) {
+      width: 100%;
+    }
+  }
+
+  .swiper-slide {
+    position: relative;
+
+    p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1.5rem 2rem;
+      background: #fffc;
+
+      @media (--mobile) {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &-nav {
+    margin-top: 1%;
+  }
+
+  &-wrap {
+    position: relative;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 1.4rem !important;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 3rem !important;
+      transition: var(--transition);
+    }
+
+    @media (--mobile) {
+      .swiper-button-prev {
+        left: 1rem !important;
+      }
+
+      .swiper-button-next {
+        right: 1rem !important;
+      }
+    }
+  }
+}

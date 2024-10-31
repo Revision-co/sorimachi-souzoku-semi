@@ -1,0 +1,107 @@
+/**
+ * text ellipsis for block multiline
+ */
+
+/*
+ unsupport IE, Edge, Fx
+
+@mixin text-ellipsis-block($rows) {
+  display: box;
+  box-orient: vertical;
+  line-clamp: $rows;
+  overflow: hidden;
+}
+*/
+
+@mixin editor {
+  p {
+    min-height: 3rem;
+  }
+
+  a {
+    color: var(--link_color);
+    text-decoration: underline !important;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration: none !important;
+      opacity: 0.5;
+    }
+  }
+
+  h2:not([class]) {
+    padding-bottom: 1.2rem;
+    font-size: var(--fs_ttl_pc);
+    font-weight: bold;
+    border-bottom: 1px solid var(--border_color);
+
+    @media (--mobile) {
+      font-size: var(--fs_ttl_sp);
+    }
+  }
+
+  h3:not([class]) {
+    position: relative;
+    padding-left: 2.5rem;
+    font-size: calc(var(--fs_ttl_pc) * 0.8);
+    font-weight: bold;
+    line-height: 1.5;
+
+    @media (--mobile) {
+      padding-left: 1.5rem;
+      font-size: calc(var(--fs_ttl_sp) * 0.8);
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      content: "";
+      background: var(--border_color);
+      border-radius: 9999px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .space {
+    margin-top: 2rem;
+  }
+
+  ul {
+    li {
+      list-style: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style: auto;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1em !important;
+
+    li {
+      &:nth-of-type(n + 2) {
+        margin-top: 1.5rem !important;
+      }
+    }
+  }
+
+  ol {
+    padding-left: 1.5em !important;
+
+    @media (--mobile) {
+      padding-left: 1em !important;
+    }
+  }
+
+  blockquote {
+    padding: 2rem;
+    border: 1px solid #333;
+  }
+}

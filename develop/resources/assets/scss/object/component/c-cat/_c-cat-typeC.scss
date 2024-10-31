@@ -1,0 +1,21 @@
+.c-cat-typeC {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 3.3rem;
+  overflow: hidden;
+
+  li {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -1.7rem;
+      width: 1px;
+      height: 1.2em;
+      content: "";
+      background: #333;
+      transform: translateY(-50%) rotate(15deg);
+    }
+  }
+}

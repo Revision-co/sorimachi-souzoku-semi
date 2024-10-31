@@ -1,0 +1,77 @@
+<div class="c-inner"> 
+  <div class="c-breadcrumb">
+    <div class="c-breadcrumb__inner">
+      <div class="c-breadcrumb__el">
+        <a href="<?php echo home_url('/'); ?>">TOP</a>
+      </div>
+      <?php 
+        if(is_page() && $post->post_parent):
+          $page_parent_ids = array_reverse(get_ancestors($post->ID, 'page'));
+
+          $length = count($page_parent_ids);
+
+          foreach($page_parent_ids as $index => $id) : 
+      ?>
+      <div class="c-breadcrumb__el">
+        <?php 
+          $pass = "";
+          for($i = 0; $i < $length; $i++) {
+            $pass .= "../"; 
+          } 
+        ?>
+        <a href="<?php echo $pass; ?>">
+            <?php echo get_post($id) -> post_title; ?>
+        </a>
+      </div>
+      <?php
+        $length--;
+        endforeach; 
+      ?>
+      <div class="c-breadcrumb__el">
+        <span>
+          <?php the_title(); ?>
+        </span>
+      </div>
+      <?php else: ?>
+      <?php 
+        if(get_post_type() != "page") :
+        $post_type = get_post_type(); //投稿タイプ名(スラッグ)の取得
+        $post_type_object = get_post_type_object($post_type); //投稿タイプの情報を取得
+          if(empty(is_single())): 
+      ?>
+      <div class="c-breadcrumb__el">
+        <span>
+          <?php echo $post_type_object -> label; ?>
+        </span>
+      </div>
+        <?php else: ?>
+      <div class="c-breadcrumb__el">
+        <a href="../">
+          <?php echo $post_type_object -> label; ?>
+        </a>
+      </div>
+      <div class="c-breadcrumb__el">
+        <span>
+          <?php echo the_title(); ?>
+        </span>
+      </div>
+        <?php endif; ?>
+      <?php else: ?>
+      <div class="c-breadcrumb__el">
+        <span>
+          <?php
+            if(!is_404()) {
+              the_title();
+            } else {
+              echo 'ページが見つかりませんでした。';
+            }
+          ?>
+        </span>
+      </div>
+      <?php
+        endif;
+      endif;
+      ?>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.c-btn01-typeA,
+.c-btn01-typeB {
+  display: block;
+  padding: 0 1.5rem;
+  color: var(--cat_color);
+  border: 1px solid var(--cat_color);
+  border-radius: 9999px;
+  transition: var(--transition);
+
+  &:hover {
+    color: #fff;
+    background: var(--cat_color);
+  }
+
+  &--reverse {
+    color: #fff;
+    background: var(--cat_color);
+
+    &:hover {
+      color: var(--cat_color);
+      background: #fff0;
+    }
+  }
+
+  &.is-active {
+    color: #fff;
+    pointer-events: none;
+    background: var(--cat_color);
+  }
+}

@@ -1,0 +1,43 @@
+.js-editor-accordion {
+  .trigger-icon {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+
+    @media (--mobile) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .elementor-widget-container {
+      position: relative;
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 2px;
+        height: 2rem;
+        margin: auto;
+        content: "";
+        background: var(--border_color);
+        transition: var(--transition);
+      }
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+
+    &.is-active {
+      .elementor-widget-container {
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

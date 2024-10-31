@@ -1,0 +1,9 @@
+.c-pagenav-typeB {
+  .nav-links {
+    .page-numbers {
+      &:not(.next):not(.prev):not(.dots) {
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.c-breadcrumb {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  overflow: auto;
+  font-size: calc(var(--fs_txt_pc) * 0.9);
+
+  @media (--mobile) {
+    margin-bottom: 3rem;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__el {
+    white-space: nowrap;
+
+    &:nth-of-type(n + 2) {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-left: 1.5rem;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.6rem;
+        height: 0.6rem;
+        content: "";
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        transform: translate(-75%, -50%) rotate(45deg);
+      }
+    }
+
+    a {
+      transition: var(--transition);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

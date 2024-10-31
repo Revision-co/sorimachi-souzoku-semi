@@ -1,0 +1,97 @@
+<?php if(!empty($post_side_cat) || !empty($post_side_month)): ?>
+<div class="c-sidebarArea">
+  <div class="c-sidebar">
+    <div class="c-sidebar__wrap">
+      <?php if(!empty($post_side_cat) && !empty($post_cat)): ?>
+      <div class="c-sidebar__child">
+        <h3 class="c-sidebar__childTtl rounded-tr-[<?php echo $post_side_radius; ?>] rounded-tl-[<?php echo $post_side_radius; ?>]">カテゴリー</h3>
+        <div class="c-sidebar__list">
+          <?php 
+            $terms_obj = get_terms($post_slug.'-cat');
+
+            // オブジェクトを連想配列に変換
+            $terms = json_decode(json_encode($terms_obj), true);
+
+            // 連想配列に「すべて」を追加
+            array_unshift($terms, array('name' => 'すべてのカテゴリー','slug' => 'all'));
+
+            $term_name = !empty($_GET['post-cat']) ? get_term_by( 'slug', $_GET['post-cat'], $post_slug.'-cat' ) -> name : 'カテゴリーを選択';
+          ?>
+          <h4 class="js-accordion"><?php echo $term_name; ?></h4>
+          <ul>
+            <?php
+              foreach($terms as $term):
+                $name = $term['name'];
+                $slug = $term['slug'];
+
+                $active = "";
+
+                if($slug === $_GET['post-cat']) {
+                  $active = 'is-active';
+                } elseif (empty($_GET['post-cat']) && $name === 'すべてのカテゴリー') {
+                  $active = 'is-active';
+                }
+
+                $link = $slug != 'all' ? home_url($post_slug.'?post-cat='.$slug) : './';
+            ?>
+            <li class="<?php echo $active; ?>"><a href="<?php echo $link; ?>"><?php echo $term['name']; ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+      </div>
+      <?php endif; ?>
+      <?php if(!empty($post_side_month)): ?>
+      <div class="c-sidebar__child">
+        <h3 class="c-sidebar__childTtl rounded-tr-[<?php echo $post_side_radius; ?>] rounded-tl-[<?php echo $post_side_radius; ?>]">アーカイブ</h3>
+        <div class="c-sidebar__list">
+          <?php 
+            $txt = !empty($_GET['post-year']) ? $_GET['post-year'] . '年' . $_GET['post-month'] . '月 ' . '(' . $_GET['post-count'] . ')' : '月を選択';
+          ?>
+          <h4 class="js-accordion"><?php echo $txt; ?></h4>
+          <ul>
+            <?php if(!empty($_GET['post-year'])) : ?>
+            <li><a href="./">すべて</a></li>
+            <?php endif; ?>
+          <?php
+            $args = array(
+              'post_type' => 'news',
+              'posts_per_page' => -1 // すべての記事を表示
+            );
+
+            $posts_in_category = get_posts($args);
+            $archive_counts_monthly = array();
+            $archive_counts_yearly = array();
+
+            foreach ($posts_in_category as $post) {
+              setup_postdata($post);
+              
+              // 月別アーカイブ
+              $archive_month = get_the_date('Y年n月');
+              if (!isset($archive_counts_monthly[$archive_month])) {
+                  $archive_counts_monthly[$archive_month] = array(
+                      'link' => $archive_month_link,
+                      'count' => 1,
+                      'year' => get_the_date('Y'),
+                      'month' => get_the_date('n')
+                  );
+              } else {
+                  $archive_counts_monthly[$archive_month]['count']++;
+              }
+            }
+
+            $i = 0;
+            foreach ($archive_counts_monthly as $archive_month => $data) {
+                $class = $data['year'] == $_GET['post-year'] && $data['month'] == $_GET['post-month'] ? 'is-active' : '';
+                echo '<li class="'. $class .'"><a href="./?post-year=' . $data['year'] . '&post-month=' . $data['month'] . '&post-count=' . $data['count'] . '">' . $archive_month . ' (' . $data['count'] . ')</a></li>';
+                $i++;
+            }
+
+            wp_reset_postdata();
+          ?>
+          </ul>
+        </div>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+  <?php endif; ?>

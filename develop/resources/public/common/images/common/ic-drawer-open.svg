@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.133" height="22" viewBox="0 0 36.133 22">
+  <g id="drawer-open" data-name="グループ 13558" transform="translate(-1341.5 -45)">
+    <path id="パス_7077" data-name="パス 7077" d="M10,0h4L4,22H0Z" transform="translate(1349.5 45)" fill="#fff"/>
+    <path id="パス_7079" data-name="パス 7079" d="M10,0h4L4,22H0Z" transform="translate(1357.5 45)" fill="#fff"/>
+    <path id="パス_7078" data-name="パス 7078" d="M10,0h4L4,22H0Z" transform="translate(1341.5 45)" fill="#fff"/>
+    <path id="パス_7081" data-name="パス 7081" d="M.153.588,5.1,7.089.106,6.62Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 1378.229, 49.232)" fill="#f99900"/>
+    <g id="パス_7080" data-name="パス 7080" transform="translate(1358.5 65.012)" fill="#fff">
+      <path d="M 5.916077613830566 1.488285899162292 L 1.352609395980835 1.488285899162292 L 2.756857633590698 0.2858072519302368 L 5.916077613830566 1.488285899162292 Z" stroke="none"/>
+      <path d="M 2.657196998596191 -0.2871140241622925 L 8.635256767272949 1.988285899162292 L -2.86102294921875e-06 1.988285899162292 L 2.657196998596191 -0.2871140241622925 Z" stroke="none" fill="#fff"/>
+    </g>
+  </g>
+</svg>

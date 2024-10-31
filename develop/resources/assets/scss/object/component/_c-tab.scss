@@ -1,0 +1,111 @@
+.js-tab {
+  .trigger {
+    & > .e-con-inner {
+      display: flex;
+      flex-direction: row !important;
+
+      & > .trigger-child {
+        min-width: calc(100% / 5);
+        padding: 1rem 4rem;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #c6c6c6;
+        transition: var(--transition);
+
+        @media (--mobile) {
+          width: 100% !important;
+          padding: 0.8rem 1rem;
+        }
+
+        &:nth-child(n + 2) {
+          margin-left: -1px;
+
+          @media (--mobile) {
+            min-width: calc(100% / 3 + 1px);
+          }
+        }
+
+        &:nth-child(4),
+        &:nth-child(7),
+        &:nth-child(10) {
+          min-width: calc(100% / 3);
+          margin-left: 0;
+        }
+
+        &.is-active {
+          color: var(--border_color);
+          pointer-events: none;
+          background: #f9f9f9;
+        }
+
+        &:hover {
+          color: var(--border_color);
+        }
+      }
+    }
+  }
+
+  .inner {
+    margin-top: -1px;
+
+    &-child {
+      padding: 2rem;
+      border: 1px solid #c6c6c6;
+
+      @media (--mobile) {
+        padding: 1rem;
+        margin-top: -1px;
+      }
+    }
+
+    @media (--mobile) {
+      .trigger-child {
+        padding: 1rem;
+        border: 1px solid #c6c6c6;
+
+        &:nth-of-type(n + 2) {
+          margin-top: -1px;
+        }
+
+        .elementor-widget-container {
+          position: relative;
+          padding-right: 3rem;
+
+          span {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid #c6c6c6;
+            border-radius: 9999px;
+            transform: translateY(-50%);
+
+            &::after,
+            &::before {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 1px;
+              height: 60%;
+              content: "";
+              background: #c6c6c6;
+              transition: var(--transition);
+              transform: translate(-50%, -50%);
+            }
+
+            &::before {
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            &.is-active {
+              &::after {
+                transform: translate(-50%, -50%) rotate(90deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

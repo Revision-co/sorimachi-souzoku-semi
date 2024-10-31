@@ -1,0 +1,128 @@
+<?php
+  if(!empty($_GET['post-cat']) && $_GET['post-cat'] !== 'all') {
+    $tax_query = array(
+      'taxonomy' => $post_slug.'-cat',
+      'field' => 'slug',
+      'terms' => $_GET['post-cat'],
+    );
+  };
+
+  $display_article = ua_smt() ? $post_display_sp : $post_display_pc;
+
+  $args = array(
+    'post_type' => $post_slug, // 投稿タイプのスラッグを指定
+    'year' => $_GET['post-year'],
+    'monthnum' => $_GET['post-month'],
+    'post_status' => 'publish',
+    'posts_per_page' => $display_article, // 投稿件数の指定
+    'paged' => $paged,
+    'tax_query' => array(
+      $tax_query
+    )
+  );
+
+  $the_query = new WP_Query($args); if($the_query->have_posts()):
+
+  $class = '';
+  switch ($post_cat_pattern) {
+    case 'patternA':
+      $class = 'c-btn01-typeA c-btn01-typeA--reverse';
+      break;
+    case 'patternB':
+      $class = 'c-btn01-typeB c-btn01-typeB--reverse';
+      break;
+    case 'patternC':
+      $class = 'c-btn01-typeC c-btn01-typeC--reverse';
+      break;
+  }
+
+  if($post_article_pattern === 'patternA-1'):
+    $col2 = !empty($post_side_cat) || !empty($post_side_month) ? 'pc:grid-cols-2' : '';
+?>
+<ul class="c-archive-typeA-1 <?php echo $col2; ?>">
+  <?php while ($the_query->have_posts()): $the_query->the_post() ?>
+  <li class="c-archive c-archive-typeA-1__el">
+    <a href="<?php echo get_the_permalink(); ?>" class="c-archive c-archive-typeA-1__link c-archive__link">
+      <figure class="c-archive-typeA-1__img"><img src="<?php echo thumbnail_alternative(); ?>" alt="<?php the_title(); ?>"></figure>
+      <div class="c-archive-typeA-1__wrap">
+        <time class="c-archive-typeA-1__time"><?php echo get_the_date( 'Y/m/d' ); ?></time>
+        <?php
+          if($post_cat):
+            $cat = get_the_terms($post->ID, $post_slug.'-cat');
+            if(!empty($cat)):
+        ?>
+        <object class="c-archive-typeA-1__cat"><a href="<?php echo home_url('/'.$post_slug.'/?post-cat=' . $cat[0] -> slug); ?>" class="<?php echo $class; ?>"><?php echo $cat[0] -> name; ?></a></object>
+        <?php
+            endif;
+          endif;
+        ?>
+      </div>
+      <h4 class="c-archive-typeA-1__ttl"><?php the_title(); ?></h4>
+    </a>
+  </li>
+  <?php endwhile; ?>
+</ul>
+<?php elseif($post_article_pattern === 'patternB-1'): ?>
+<ul class="c-archive c-archive-typeB-1">
+  <?php while ($the_query->have_posts()): $the_query->the_post() ?>
+  <li class="c-archive-typeB-1__el">
+    <a href="<?php echo get_the_permalink(); ?>" class="c-archive c-archive-typeB-1__link c-archive__link">
+      <div class="c-archive-typeB-1__wrap">
+        <time class="c-archive-typeB-1__time"><?php echo get_the_date( 'Y/m/d' ); ?></time>
+        <?php
+          if($post_cat):
+            $cat = get_the_terms($post->ID, $post_slug.'-cat');
+            if(!empty($cat)):
+        ?>
+        <object class="c-archive-typeB-1__cat"><a href="<?php echo home_url('/'.$post_slug.'/?post-cat=' . $cat[0] -> slug); ?>" class="<?php echo $class; ?>"><?php echo $cat[0] -> name; ?></a></object>
+        <?php
+            endif;
+          endif;
+        ?>
+      </div>
+      <h4 class="c-archive-typeB-1__ttl"><?php the_title(); ?></h4>
+    </a>
+  </li>
+  <?php endwhile; ?>
+</ul>
+<?php elseif($post_article_pattern === 'patternB-2'): ?>
+<ul class="c-archive c-archive-typeB-2">
+  <?php while ($the_query->have_posts()): $the_query->the_post() ?>
+  <li class="c-archive-typeB-2__el">
+    <a href="<?php echo get_the_permalink(); ?>" class="c-archive c-archive-typeB-2__link c-archive__link">
+      <div class="c-archive-typeB-2__wrap">
+        <time class="c-archive-typeB-2__time"><?php echo get_the_date( 'Y/m/d' ); ?></time>
+        <?php
+          if($post_cat):
+            $cat = get_the_terms($post->ID, $post_slug.'-cat');
+            if(!empty($cat)):
+        ?>
+        <object class="c-archive-typeB-2__cat"><a href="<?php echo home_url('/'.$post_slug.'/?post-cat=' . $cat[0] -> slug); ?>" class="<?php echo $class; ?>"><?php echo $cat[0] -> name; ?></a></object>
+        <?php
+            endif;
+          endif;
+        ?>
+      </div>
+      <h4 class="c-archive-typeB-2__ttl">
+        <p><?php the_title(); ?></p>
+        <%- include( '../../assets/ejs/svg/arrow-right-black01.svg' ); %>
+      </h4>
+    </a>
+  </li>
+  <?php endwhile; ?>
+</ul>
+<?php elseif($post_article_pattern === 'patternC-1'): ?>
+<ul class="c-archive c-archive-typeC-1">
+  <?php while ($the_query->have_posts()): $the_query->the_post() ?>
+  <li class="c-archive-typeC-1__el">
+    <a href="<?php echo get_the_permalink(); ?>" class="c-archive c-archive-typeC-1__link c-archive__link">
+      <div class="c-archive-typeC-1__wrap">
+        <time class="c-archive-typeC-1__time"><?php echo get_the_date( 'Y/m/d' ); ?></time>
+      </div>
+      <h4 class="c-archive-typeC-1__ttl"><?php the_title(); ?></h4>
+    </a>
+  </li>
+  <?php endwhile; ?>
+</ul>
+<?php endif; ?>
+<?php endif; ?>

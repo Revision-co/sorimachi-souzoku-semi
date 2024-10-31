@@ -1,0 +1,27 @@
+<?php
+  $modal = get_field('モーダル_出力');
+  
+  $args = array(
+    'post_type' => 'page',
+    'post__in' => $modal // 表示したいページのIDを配列で指定します
+);
+
+  $the_query = new WP_Query($args); if($the_query->have_posts()):
+    while ($the_query->have_posts()): $the_query->the_post()
+?>
+<div class="c-modal-container js-modal-container">
+  <div class="c-modal-container__overlay js-modal-close"></div>
+  <div class="c-modal-container__out">
+    <div class="c-modal-container__close js-modal-close"></div>
+    <div class="c-modal-container__inner js-modal-out">
+      <div class="js-modal-clone">
+        <?php the_content(); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php
+    endwhile;
+  endif;
+  wp_reset_postdata();
+?>

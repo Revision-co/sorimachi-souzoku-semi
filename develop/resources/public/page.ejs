@@ -1,0 +1,91 @@
+<?php include_once('header.php'); ?>
+
+<?php include( get_template_directory().'/module/mv.php' ); ?>
+<%- include( '../assets/ejs/elements/breadcrumb.ejs' ); %>
+
+<div class="c-content">
+  <?php if(!empty(get_field('サイドナビ'))): ?>
+  <div class="
+    c-pc-inner
+
+    pc:flex
+    pc:justify-between
+    pc:gap-x-[5rem]
+  ">
+    <div class="
+      sp:hidden
+    ">
+      <div class="
+        js-sideNav
+        c-sideNav
+  
+        sticky
+        top-[15rem]
+        grid
+        flex-shrink-0
+        gap-y-[1rem]
+
+        [&>a]:opacity-[.3]
+        [&>a]:flex
+        [&>a]:items-center
+        
+        hover:[&>a]:opacity-[1]
+
+        [&>a.is-active]:opacity-[1]
+        [&>a.is-active]:pointer-events-none
+
+        [&>a>hr]:w-0
+        [&>a>hr]:h-[1px]
+        [&>a>hr]:bg-[#000]
+        [&>a>hr]:border-none
+
+        [&>a.is-active>hr]:w-[1rem]
+        [&>a.is-active>hr]:mr-[0.5rem]
+      ">
+      </div>
+    </div>
+    <div class="pc:w-[75%]">
+  <?php endif; ?>
+
+  <?php the_content(); ?>
+
+  <?php if(!empty(get_field('サイドナビ'))): ?>
+    </div>
+  </div>
+  <?php endif; ?>
+</div>
+
+<?php
+  $modal = get_field('モーダル_出力');
+
+  if(!empty($modal)):
+  
+    $args = array(
+      'post_type' => 'page',
+      'post__in' => $modal,
+      'orderby' => 'post__in', // IDの順番を保持
+      'posts_per_page' => -1
+    );
+
+  $the_query = new WP_Query($args); if($the_query->have_posts()):
+    while ($the_query->have_posts()): $the_query->the_post()
+?>
+<div class="c-modal-container js-modal-container" data-id="<?php echo get_the_ID(); ?>">
+  <div class="c-modal-container__overlay js-modal-close"></div>
+  <div class="c-inner">
+    <div class="c-modal-container__close js-modal-close"></div>
+    <div class="c-modal-container__out c-content">
+      <div class="c-modal-container__inner js-modal-out">
+        <?php the_content(); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php
+      endwhile;
+    endif;
+  endif;
+  wp_reset_postdata();
+?>
+
+<?php include_once('footer.php'); ?>

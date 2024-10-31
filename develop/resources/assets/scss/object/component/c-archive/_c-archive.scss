@@ -1,0 +1,9 @@
+.c-archive {
+  &__link {
+    transition: var(--transition);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

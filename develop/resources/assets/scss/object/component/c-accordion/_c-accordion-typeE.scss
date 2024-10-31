@@ -1,0 +1,99 @@
+.js-accordionE {
+  .trigger {
+    position: relative;
+    padding: 1.8rem 2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #707070 !important;
+    transition: var(--transition);
+
+    @media (--mobile) {
+      padding: 2rem;
+    }
+
+    & > .e-con-inner {
+      display: flex;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      column-gap: 2rem;
+      align-items: center !important;
+
+      @media (--mobile) {
+        column-gap: 1rem;
+      }
+
+      & > .flex {
+        & > .e-con-inner {
+          display: block;
+
+          @media (--mobile) {
+            column-gap: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .q-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+      background: #6d7df5;
+      border-radius: 9999px;
+    }
+
+    .flex .e-con-inner {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      column-gap: 1.5rem !important;
+
+      @media (--mobile) {
+        column-gap: 1rem !important;
+      }
+
+      .q-icon {
+        flex-shrink: 0;
+        padding-top: 0.5rem;
+        margin-top: 1.2rem;
+      }
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .inner {
+    padding: 2rem 4rem;
+    margin-top: -1px;
+    border: 1px solid #707070;
+
+    @media (--mobile) {
+      padding: 2rem;
+    }
+
+    & > .e-con-inner {
+      display: flex;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      column-gap: 2rem;
+
+      @media (--mobile) {
+        column-gap: 1.5rem;
+        align-items: flex-start !important;
+      }
+    }
+
+    .a-icon {
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      width: 5.7rem;
+      font-size: 2rem;
+      font-weight: bold;
+      border-right: 1px solid #c6c6c6;
+
+      @media (--mobile) {
+        width: 4rem;
+      }
+    }
+  }
+}

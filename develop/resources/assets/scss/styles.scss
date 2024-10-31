@@ -1,0 +1,26 @@
+@charset "utf-8";
+@tailwind base;
+@tailwind components;
+
+// Foundation
+@import "foundation/setting/**";
+
+// vendor
+@import "normalize.css"; /* == @import "../node_modules/normalize.css/normalize.css"; */
+@import "swiper/swiper-bundle.min.css";
+@import "@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "foundation/vendor/**";
+@import "foundation/base/_structure";
+@import "foundation/base/_tailwind";
+
+// Layout
+@import "layout/**";
+
+// Object/Component
+@import "object/component/**";
+
+// Object/Component
+@import "object/utility/**";
+
+//pages
+@import "./object/project/**";

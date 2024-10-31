@@ -1,0 +1,149 @@
+.c-archive-typeB-1,
+.c-archive-typeB-2,
+.c-archive-typeC-1 {
+  $selector: #{&};
+
+  margin-top: -2rem;
+
+  &__wrap {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: 30rem;
+
+    @media (--mobile) {
+      width: auto;
+    }
+  }
+
+  &__time {
+    flex-shrink: 0;
+    width: 12rem;
+    font-size: calc(calc(var(--fs_txt_pc) * 0.9));
+
+    @media (--mobile) {
+      width: 10rem;
+    }
+  }
+
+  &_cat {
+    a {
+      max-width: 13rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__ttl {
+    display: unquote("-webkit-box");
+    overflow: hidden;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    transition: var(--transition);
+
+    @media (--mobile) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__el {
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+
+    &:nth-of-type(n + 2) {
+      margin-top: -1px;
+    }
+
+    &:first-of-type {
+      border-top: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 3rem 1.5rem;
+
+    @media (--mobile) {
+      display: block;
+      padding: 2.5rem 0.5rem;
+    }
+
+    @media (--large) {
+      // &:hover {
+      //   #{$selector}__ttl {
+      //     color: var(--cat_color);
+      //   }
+      // }
+    }
+  }
+}
+
+.c-archive-typeB-1,
+.c-archive-typeB-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+
+  @media (--mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  &__el {
+    border-top: none;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  &__time {
+    width: auto;
+    margin-right: 1.5rem;
+
+    @media (--mobile) {
+      width: auto;
+    }
+  }
+
+  &__wrap {
+    width: auto;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__ttl {
+    margin-top: 1.5rem;
+  }
+}
+
+.c-archive-typeB-2 {
+  grid-template-columns: 1fr;
+
+  &__ttl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      display: unquote("-webkit-box");
+      width: 95%;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+
+      @media (--mobile) {
+        width: 100%;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    svg {
+      width: 0.8rem;
+
+      @media (--mobile) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.c-pagenav-typeC {
+  .nav-links {
+    .page-numbers {
+      margin: 0 1.4rem;
+      font-size: calc(calc(var(--fs_txt_pc) * 1.1));
+
+      &:not(.next):not(.prev):not(.dots) {
+        width: 2rem;
+        height: 3rem;
+        background: none;
+        border: none;
+        border-radius: 0;
+
+        &:hover {
+          color: #333;
+          background: none;
+          border: none;
+        }
+
+        &.current {
+          color: #333;
+          background: none;
+          border: none;
+          border-bottom: 2px solid #333;
+        }
+
+        @media (--mobile) {
+          width: 2rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+}

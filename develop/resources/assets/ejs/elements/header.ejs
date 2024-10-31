@@ -1,0 +1,198 @@
+  <?php
+    $directory_uri = get_template_directory_uri();
+    $home_url = get_home_url();
+  ?>
+  <!-- header -->
+  <header class="l-header <?= $class = !is_front_page() ? 'sp:!bg-white' : ''; ?>">
+    <div class="l-header__inner js-header <?= $class = !is_front_page() ? 'is-scroll change-color' : ''; ?>">
+      <h1 class="p-header__logo">
+        <a href="<?= $home_url; ?>/">
+          <img src="<?= $directory_uri ?>/common/images/common/ic-logo.svg" alt="相続手続支援センター新潟第１">
+        </a>
+      </h1>
+      <nav class="p-header__nav">
+        <ul class="p-header__nav-list">
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/about/">当センターについて</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/feature/">サービスの流れ</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/price/">料金</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/faq/">よくあるご質問	</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/company/">会社案内</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/access/">アクセス</a></li>
+          <li><a class="c-header__contact" href="<?= $home_url; ?>/contact/">
+            <!-- ic-mail -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.205 15.951">
+                <path id="mail" d="M118.283-780a1.855,1.855,0,0,1,1.364.558,1.855,1.855,0,0,1,.558,1.364v12.107a1.855,1.855,0,0,1-.558,1.364,1.855,1.855,0,0,1-1.364.558h-16.36a1.855,1.855,0,0,1-1.364-.558,1.855,1.855,0,0,1-.558-1.364v-12.107a1.855,1.855,0,0,1,.558-1.364,1.855,1.855,0,0,1,1.364-.558Zm-8.18,7.383,8.507,5.44v-10.9a.319.319,0,0,0-.092-.235.319.319,0,0,0-.235-.092h-16.36a.319.319,0,0,0-.235.092.319.319,0,0,0-.092.235v10.9Zm0,1.656-8.344,5.317h16.688Zm8.507,3.784v-10.9a.319.319,0,0,0-.092-.235.319.319,0,0,0-.235-.092h.327Z" transform="translate(120.205 -764.049) rotate(180)"/>
+            </svg>
+            <span>お問い合わせ</span>
+          </a></li>
+          <li><button class="c-header__drawer-button js-drawer <?= $class = !is_front_page() ? 'sp:!rounded-none' : ''; ?>">
+            <!-- ic-drawer-open -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.133 22">
+              <g id="drawer-open" data-name="グループ 13558" transform="translate(-1341.5 -45)">
+                <path id="パス_7077" data-name="パス 7077" d="M10,0h4L4,22H0Z" transform="translate(1349.5 45)" fill="#fff"/>
+                <path id="パス_7079" data-name="パス 7079" d="M10,0h4L4,22H0Z" transform="translate(1357.5 45)" fill="#fff"/>
+                <path id="パス_7078" data-name="パス 7078" d="M10,0h4L4,22H0Z" transform="translate(1341.5 45)" fill="#fff"/>
+                <path id="パス_7081" data-name="パス 7081" d="M.153.588,5.1,7.089.106,6.62Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 1378.229, 49.232)" fill="#f99900"/>
+                <g id="パス_7080" data-name="パス 7080" transform="translate(1358.5 65.012)" fill="#fff">
+                  <path d="M 5.916077613830566 1.488285899162292 L 1.352609395980835 1.488285899162292 L 2.756857633590698 0.2858072519302368 L 5.916077613830566 1.488285899162292 Z" stroke="none"/>
+                  <path d="M 2.657196998596191 -0.2871140241622925 L 8.635256767272949 1.988285899162292 L -2.86102294921875e-06 1.988285899162292 L 2.657196998596191 -0.2871140241622925 Z" stroke="none" fill="#fff"/>
+                </g>
+              </g>
+            </svg>
+            <span>MENU</span>
+          </button></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- drawer -->
+    <div class="p-drawer">
+      <div class="p-drawer__inner">
+        <h2 class="p-drawer__title pc-only">The First Penguin<br>Company</h2>
+        <button class="p-drawer__button">
+          <!-- ic-drawer-close -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.134 22">
+            <g id="drawer-close" data-name="グループ 32282" transform="translate(-1148.366 -45)">
+              <path id="パス_7077" data-name="パス 7077" d="M4,0H0L10,22h4Z" transform="translate(1148.368 45)" fill="#fff"/>
+              <path id="合体_10" data-name="合体 10" d="M6680,21179.5h-1l10-22h4l-9.167,20.172,4.8,1.828Z" transform="translate(-5530.633 -21112.5)" fill="#fff"/>
+              <path id="パス_7081" data-name="パス 7081" d="M.153.588,5.1,7.089.106,6.62Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 1169.096, 49.232)" fill="#f99900"/>
+            </g>
+          </svg>
+          <div class="btnTextChange"><span>MENU</span><span>CLOSE</span></div>
+        </button>
+        <!-- drawer menu pc -->
+        <div class="p-drawer__content pc-only">
+          <ul class="p-drawer__list">
+            <li><a href="<?= $home_url; ?>/">トップ</a></li>
+            <li><a href="<?= $home_url; ?>/about/">当センターについて</a></li>
+            <li><a href="<?= $home_url; ?>/feature/">当センターの特徴</a></li>
+            <li><a href="<?= $home_url; ?>/service/">サービスの流れ</a></li>
+            <li><a href="<?= $home_url; ?>/price/">料金について</a></li>
+            <li><a href="<?= $home_url; ?>/faq/">よくあるご質問</a></li>
+            <li><a href="<?= $home_url; ?>/examples/">相談事例</a></li>
+            <li><a href="<?= $home_url; ?>/company/">会社案内</a></li>
+            <li><a href="<?= $home_url; ?>/access/">アクセス</a></li>
+            <li><a href="<?= $home_url; ?>/contact/">お問い合わせ</a></li>
+            <li><a href="<?= $home_url; ?>/consultations/">無料相談のご案内</a></li>
+            <li>
+              <ul class="p-drawer__submenu-list-pc">
+                <li>お役立ち情報</li>
+                <li><a href="<?= $home_url; ?>/flows/">相続手続きの流れ</a></li>
+                <li><a href="<?= $home_url; ?>/list/">相続手続きやることリスト</a></li>
+                <li><a href="<?= $home_url; ?>/tax/">相続税について</a></li>
+                <li><a href="<?= $home_url; ?>/questions/">相続手続きＱ＆Ａ</a></li>
+                <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="p-drawer__sns">
+            <!-- facebook -->
+            <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_12" data-name="グループ 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3744" data-name="長方形 3744" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <path id="パス_71" data-name="パス 71" d="M51.673,166.8l.658-4.288H48.217v-2.783a2.144,2.144,0,0,1,2.417-2.316H52.5v-3.65a22.82,22.82,0,0,0-3.321-.29c-3.388,0-5.6,2.053-5.6,5.771v3.268H39.815V166.8h3.766v10.365a15,15,0,0,0,4.636,0V166.8Z" transform="translate(-26.046 -145.206)" fill="#fff"/>
+              </svg>
+            </a>
+            <!-- instagram -->
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_16" data-name="グループ 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <g id="Instagram_logo" data-name="Instagram logo" transform="translate(10.551 10.316)">
+                  <path id="パス_11" data-name="パス 11" d="M18.416,0H9.982a5.72,5.72,0,0,0-5.7,5.739v8.829a5.72,5.72,0,0,0,5.7,5.739h8.434a5.72,5.72,0,0,0,5.7-5.739V5.739A5.72,5.72,0,0,0,18.416,0ZM6.305,5.739a3.693,3.693,0,0,1,3.677-3.7h8.434a3.693,3.693,0,0,1,3.677,3.7v8.829a3.693,3.693,0,0,1-3.677,3.7H9.982a3.693,3.693,0,0,1-3.677-3.7Z" transform="translate(-4.281)" fill="#fff"/>
+                  <path id="パス_12" data-name="パス 12" d="M129.344,134.6a5.23,5.23,0,1,0-5.2-5.229A5.218,5.218,0,0,0,129.344,134.6Zm0-8.829a3.6,3.6,0,1,1-3.576,3.6A3.592,3.592,0,0,1,129.344,125.775Z" transform="translate(-119.426 -119.221)" fill="#fff"/>
+                  <ellipse id="楕円形_3" data-name="楕円形 3" cx="1.164" cy="1.172" rx="1.164" ry="1.172" transform="translate(14.102 3.6)" fill="#fff"/>
+                </g>
+              </svg>
+            </a>
+            <!-- x -->
+            <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_32185" data-name="グループ 32185" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <g id="グループ_32188" data-name="グループ 32188" transform="translate(11.844 11.724)">
+                  <path id="パス_52630" data-name="パス 52630" d="M2.292,1.186h2.2L14.873,16.3H12.754ZM15.07,0l-5.5,6.385L5.15,0H0L6.683,9.734,0,17.491H1.566l5.8-6.769,4.647,6.769h5.245L10.242,7.358,16.542,0Z" fill="#fff"/>
+                  <path id="パス_52631" data-name="パス 52631" d="M18.957,18.419H16.838L6.376,3.3h2.2Z" transform="translate(-4.084 -2.114)" fill="none"/>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- drawer menu sp -->
+        <div class="p-drawer__content sp-only">
+          <ul class="p-drawer__list">
+            <li><a href="<?= $home_url; ?>/">トップ</a></li>
+            <li><a href="<?= $home_url; ?>/about/">当センターについて</a></li>
+            <li><a href="<?= $home_url; ?>/feature/">当センターの特徴</a></li>
+            <li><a href="<?= $home_url; ?>/service/">サービスの流れ</a></li>
+            <li><a href="<?= $home_url; ?>/price/">料金について</a></li>
+            <li><a href="<?= $home_url; ?>/faq/">よくあるご質問</a></li>
+            <li><a href="<?= $home_url; ?>/examples/">相談事例</a></li>
+            <li><a href="<?= $home_url; ?>/company/">会社案内</a></li>
+            <li><a href="<?= $home_url; ?>/access/">アクセス</a></li>
+            <li><a href="<?= $home_url; ?>/contact/">お問い合わせ</a></li>
+            <li><a href="<?= $home_url; ?>/consultations/">無料相談のご案内</a></li>
+            <li>
+              <ul class="p-drawer__submenu-list js-toggle">
+                <li>お役立ち情報</li>
+                <li><a href="<?= $home_url; ?>/flows/">相続手続きの流れ</a></li>
+                <li><a href="<?= $home_url; ?>/list/">相続手続きやることリスト</a></li>
+                <li><a href="<?= $home_url; ?>/tax/">相続税について</a></li>
+                <li><a href="<?= $home_url; ?>/questions/">相続手続きＱ＆Ａ</a></li>
+                <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="p-drawer__sns">
+            <!-- facebook -->
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_12" data-name="グループ 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3744" data-name="長方形 3744" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <path id="パス_71" data-name="パス 71" d="M51.673,166.8l.658-4.288H48.217v-2.783a2.144,2.144,0,0,1,2.417-2.316H52.5v-3.65a22.82,22.82,0,0,0-3.321-.29c-3.388,0-5.6,2.053-5.6,5.771v3.268H39.815V166.8h3.766v10.365a15,15,0,0,0,4.636,0V166.8Z" transform="translate(-26.046 -145.206)" fill="#fff"/>
+              </svg>
+            </a>
+            <!-- instagram -->
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_16" data-name="グループ 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <g id="Instagram_logo" data-name="Instagram logo" transform="translate(10.551 10.316)">
+                  <path id="パス_11" data-name="パス 11" d="M18.416,0H9.982a5.72,5.72,0,0,0-5.7,5.739v8.829a5.72,5.72,0,0,0,5.7,5.739h8.434a5.72,5.72,0,0,0,5.7-5.739V5.739A5.72,5.72,0,0,0,18.416,0ZM6.305,5.739a3.693,3.693,0,0,1,3.677-3.7h8.434a3.693,3.693,0,0,1,3.677,3.7v8.829a3.693,3.693,0,0,1-3.677,3.7H9.982a3.693,3.693,0,0,1-3.677-3.7Z" transform="translate(-4.281)" fill="#fff"/>
+                  <path id="パス_12" data-name="パス 12" d="M129.344,134.6a5.23,5.23,0,1,0-5.2-5.229A5.218,5.218,0,0,0,129.344,134.6Zm0-8.829a3.6,3.6,0,1,1-3.576,3.6A3.592,3.592,0,0,1,129.344,125.775Z" transform="translate(-119.426 -119.221)" fill="#fff"/>
+                  <ellipse id="楕円形_3" data-name="楕円形 3" cx="1.164" cy="1.172" rx="1.164" ry="1.172" transform="translate(14.102 3.6)" fill="#fff"/>
+                </g>
+              </svg>
+            </a>
+            <!-- x -->
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg id="グループ_32185" data-name="グループ 32185" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
+                <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
+                  <rect width="40.938" height="40.938" rx="20" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="39.938" height="39.938" rx="19.5" fill="none"/>
+                </g>
+                <g id="グループ_32188" data-name="グループ 32188" transform="translate(11.844 11.724)">
+                  <path id="パス_52630" data-name="パス 52630" d="M2.292,1.186h2.2L14.873,16.3H12.754ZM15.07,0l-5.5,6.385L5.15,0H0L6.683,9.734,0,17.491H1.566l5.8-6.769,4.647,6.769h5.245L10.242,7.358,16.542,0Z" fill="#fff"/>
+                  <path id="パス_52631" data-name="パス 52631" d="M18.957,18.419H16.838L6.376,3.3h2.2Z" transform="translate(-4.084 -2.114)" fill="none"/>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /drawer -->
+
+
+  </header><!-- /header -->

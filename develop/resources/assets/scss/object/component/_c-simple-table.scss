@@ -1,0 +1,134 @@
+.c-simple-table {
+  width: 100%;
+
+  &-typeA {
+    &,
+    * {
+      border-color: var(--table_border_color);
+    }
+
+    th {
+      background: var(--table_bg_color);
+    }
+
+    &,
+    td,
+    tr {
+      background: none !important;
+    }
+
+    @media (--mobile) {
+      tr:nth-of-type(n + 2) {
+        display: block;
+        margin-top: -1px;
+      }
+
+      td {
+        display: block;
+        margin-top: -1px;
+      }
+    }
+
+    th,
+    td {
+      padding: 2rem 3rem;
+
+      @media (--mobile) {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        text-align: left;
+      }
+    }
+  }
+
+  &-typeB {
+    &,
+    td {
+      background: none !important;
+    }
+
+    &,
+    * {
+      border: none !important;
+    }
+
+    tr {
+      @media (--large) {
+        &:nth-child(even) {
+          background: none !important;
+        }
+      }
+
+      @media (--mobile) {
+        background: none !important;
+      }
+    }
+
+    th {
+      text-align: left;
+
+      @media (--large) {
+        background: none !important;
+      }
+    }
+
+    th,
+    td {
+      padding: 2rem 3rem;
+
+      @media (--mobile) {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+
+  &-typeC {
+    &,
+    * {
+      background: none !important;
+
+      &:not(tr) {
+        border: none !important;
+      }
+    }
+
+    tr {
+      border-top-width: 1px !important;
+      border-bottom-width: 1px !important;
+
+      @media (--mobile) {
+        display: block;
+        padding: 2rem 0;
+
+        &:nth-child(n + 2) {
+          margin-top: -1px;
+        }
+      }
+    }
+
+    th {
+      text-align: left;
+      background: none;
+
+      @media (--mobile) {
+        margin-bottom: 0.3rem;
+        font-size: calc(var(--fs_txt_sp) * 1.1);
+        font-weight: bold;
+      }
+    }
+
+    td,
+    th {
+      padding: 2rem;
+
+      @media (--mobile) {
+        display: block;
+        width: 100%;
+        padding: 0 1.5rem;
+      }
+    }
+  }
+}

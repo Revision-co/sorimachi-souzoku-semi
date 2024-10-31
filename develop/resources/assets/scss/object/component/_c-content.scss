@@ -1,0 +1,28 @@
+.c-content {
+  ul {
+    li {
+      list-style: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style: auto;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    padding: 1rem 1.5rem 0.7rem;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: normal;
+    background: #fafafa;
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * Custom media queries
+ * @example
+ * @media (--mobile) {
+ *    styles for mobile viewport
+ * }
+ */
+
+/**
+ * for mobile viewoport
+ */
+@custom-media --mobile screen and (max-width: 767px);
+@custom-media --large screen and (min-width: 768px);
+@custom-media --tablet screen and (max-width: 1023px) and (min-width: 768px);
+@custom-media --vw_outside screen and (min-width: 1600px);
+@custom-media --vw_inside screen and (min-width: 768px) and (max-width: 1599px);
+

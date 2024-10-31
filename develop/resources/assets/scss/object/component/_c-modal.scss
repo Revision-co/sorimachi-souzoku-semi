@@ -1,0 +1,112 @@
+.c-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100svh;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+
+  &.is-active {
+    pointer-events: inherit;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+  }
+
+  .c-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__out {
+    position: relative;
+    width: 100%;
+    max-height: 80%;
+    overflow: auto;
+
+    .c-inner {
+      padding: 0 !important;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 9999px;
+
+    @at-root .is-active & {
+      pointer-events: auto;
+    }
+
+    @media (--mobile) {
+      top: 1rem;
+      right: 1rem;
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 60%;
+      content: "";
+      background: #000;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    padding: 5rem !important;
+    overflow: auto;
+    background: #fff;
+
+    @media (--mobile) {
+      padding: 3rem !important;
+    }
+
+    @at-root .is-active & {
+      pointer-events: auto;
+
+      * {
+        pointer-events: auto;
+      }
+    }
+
+    * {
+      max-width: 100%;
+    }
+  }
+
+  .elementor-element {
+    display: block !important;
+  }
+}

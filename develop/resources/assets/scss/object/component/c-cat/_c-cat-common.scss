@@ -1,0 +1,7 @@
+.c-cat {
+  margin-bottom: 5rem;
+
+  @media (--mobile) {
+    margin-bottom: 3rem;
+  }
+}

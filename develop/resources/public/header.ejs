@@ -1,0 +1,13 @@
+<?php
+  $transition = get_option('transition');
+  $transition = preg_replace('/s/', '', $transition);
+  $transition = $transition * 1000;
+?>
+<!DOCTYPE html>
+<html lang="ja" data-transition="<?php echo $transition; ?>">
+  <head>
+    <%- include( '../assets/ejs/elements/head-property.ejs' ); %>
+    <%- include( '../assets/ejs/elements/head-assets.ejs' ); %>
+  </head>
+  <body class="js-load-inview" style="opacity: 0;">
+    <%- include( '../assets/ejs/elements/header.ejs' ); %>

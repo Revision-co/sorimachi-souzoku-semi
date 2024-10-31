@@ -1,0 +1,330 @@
+/* ----------------------------------------------------------------------
+ Contactform - お問い合わせフォーム
+---------------------------------------------------------------------- */
+
+.wpcf7 {
+  width: 100%;
+  padding: 0;
+  font-size: 1.4rem;
+  background: #fafafa;
+  border: 1px solid #ddd;
+
+  form {
+    margin: 4em 7em 2em;
+
+    @media (--mobile) {
+      margin: 2em 1.5em;
+    }
+  }
+
+  br {
+    display: none;
+  }
+
+  p {
+    margin-bottom: 2.5em;
+    font-size: var(--fs_txt_pc);
+
+    @media (--mobile) {
+      font-size: var(--fs_txt_sp);
+    }
+  }
+
+  input:not(.wpcf7-submit),
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.8rem;
+    line-height: 1.2;
+    border: 1px solid #ccc;
+  }
+
+  select {
+    width: auto;
+    max-width: 97%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+  }
+
+  input {
+    &[type="checkbox"],
+    &[type="radio"] {
+      width: auto;
+      max-width: 97%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+    }
+  }
+
+  select,
+  .wpcf7-list-item-label {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .wpcf7-list-item {
+    display: block;
+  }
+
+  textarea {
+    height: 30rem;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: 1px solid #bbb;
+    outline: none;
+  }
+
+  .submit-btn {
+    margin-top: 5rem;
+
+    & > p {
+      margin-bottom: 0 !important;
+      text-align: center;
+    }
+
+    .wpcf7-submit {
+      // position: relative;
+      // box-sizing: border-box;
+      // display: block;
+      // width: 22.5rem;
+      // height: 4.8rem;
+      // margin: 3rem auto 0;
+      // font-size: 1.4rem;
+      // line-height: 1.5;
+      // color: #fff;
+      // text-align: center;
+      // text-decoration: none;
+      // cursor: pointer;
+      // background-color: #333;
+      // border: none !important;
+      // outline: none;
+      // transition: all 0.3s;
+
+      display: block;
+      justify-content: center;
+      width: 20rem;
+      height: 5rem;
+      margin-right: auto;
+      margin-left: auto;
+      color: #fff;
+      background: var(--background_color);
+      border-radius: 9999px;
+
+      &::before,
+      &::after {
+        box-sizing: border-box;
+      }
+
+      &:hover {
+        background-color: #666;
+      }
+
+      .wpcf7-not-valid {
+        background: pink;
+      }
+
+      .wpcf7-response-output {
+        padding: 0.8rem 3.5rem 0.8rem 1.4rem;
+        margin: 1rem 0 0;
+        border-radius: 0.4rem;
+      }
+
+      .wpcf7-validation-errors {
+        color: #b94a48;
+        background-color: #f2dede;
+        border: 1px solid #eed3d7;
+      }
+
+      .wpcf7-mail-sent-ok {
+        color: #3a87ad;
+        background-color: #d9edf7;
+        border: 1px solid #bce8f1;
+      }
+    }
+  }
+
+  * {
+    outline: none;
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: 0.5rem;
+  }
+
+  .wpcf7-checkbox,
+  .wpcf7-radio {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem -1rem;
+  }
+
+  .wpcf7-list-item {
+    margin: 0.5rem 1rem;
+  }
+
+  [data-name="checkbox"],
+  [data-name="radio"],
+  [data-name="policy"] {
+    [type="checkbox"],
+    [type="radio"] {
+      position: relative;
+      width: 2rem !important;
+      height: 2rem !important;
+      padding: 0 !important;
+      margin-right: 0.7rem;
+      border: none !important;
+      appearance: none !important;
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        content: "";
+        border: 1px solid #a3a3a3;
+        transform: translateY(-50%) translateY(-0.1rem);
+      }
+
+      &::before {
+        left: 50%;
+        width: 1.2rem;
+        height: 1.2rem;
+        background: url(../images/common/ic_check.png) no-repeat center center / contain;
+        border: none;
+        z-index: 1;
+        opacity: 0;
+        transform: translateY(-50%) translateY(-0.1rem) translateX(-50%);
+      }
+
+      &:checked {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .wpcf7-list-item {
+      cursor: pointer !important;
+
+      label {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  [data-name="radio"] {
+    [type="radio"] {
+      &::after,
+      &::before {
+        border-radius: 9999px;
+      }
+
+      &::before {
+        width: 0.8rem;
+        height: 0.8rem;
+        background: #000;
+        border: none;
+        opacity: 0;
+        transform: translateY(-50%) translateY(-0.1rem) translateX(-50%);
+      }
+    }
+
+    .wpcf7-list-item label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .submit {
+    display: block;
+  }
+
+  .policy {
+    b,
+    p {
+      margin-bottom: 0 !important;
+    }
+
+    & > div {
+      height: 18rem;
+      padding: 0.5rem 2rem 2rem;
+      margin-top: 1rem;
+      overflow: auto;
+      line-height: 2;
+      border: 1px solid #ddd;
+
+      * {
+        font-size: 1.4rem !important;
+      }
+
+      b {
+        display: inline-block;
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 1.6rem !important;
+      }
+
+      a {
+        text-decoration: underline;
+        transition: var(--transition);
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .policyTxt {
+    br {
+      display: block !important;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: calc(var(--fs_txt_pc) * 0.9);
+    }
+
+    h3 {
+      margin-top: 1.5em;
+      font-size: calc(var(--fs_txt_pc) * 1.1);
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 1em;
+
+      p {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  .agree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .wpcf7-form-control-wrap {
+      margin-top: 0;
+      margin-right: 1rem;
+    }
+
+    .wpcf7-list-item {
+      width: 2rem;
+      height: 2rem;
+      margin: 0 !important;
+    }
+  }
+}

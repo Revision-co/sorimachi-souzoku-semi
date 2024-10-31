@@ -1,0 +1,42 @@
+<?php 
+  if($the_query -> max_num_pages > 0):
+    if($post_pagenav_pattern === 'patternA'): 
+?>
+<div class="c-pagenav c-pagenav-typeA">
+  <?php
+    $args = array(
+      'total' => $the_query -> max_num_pages,
+      'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+      'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+    );
+    the_posts_pagination($args);
+  ?>
+</div>
+<?php endif; ?>
+<?php if($post_pagenav_pattern === 'patternB'): ?>
+<div class="c-pagenav c-pagenav-typeB">
+  <?php
+    $args = array(
+      'total' => $the_query -> max_num_pages,
+      'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+      'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+    );
+    the_posts_pagination($args);
+  ?>
+</div>
+<?php endif; ?>
+<?php if($post_pagenav_pattern === 'patternC'): ?>
+<div class="c-pagenav c-pagenav-typeC">
+  <?php
+    $args = array(
+      'total' => $the_query -> max_num_pages,
+      'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+      'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.27 15.125"><g transform="translate(-1310.998 -1320.379)"><path d="M-12041.486-21631.01l7.209,7.209-7.209,7.209" transform="translate(13352.838 22951.742)" fill="none" stroke="#3c3c3c" stroke-width="1"/></g></svg>',
+    );
+    the_posts_pagination($args);
+  ?>
+</div>
+<?php
+    endif; 
+  endif; 
+?>
