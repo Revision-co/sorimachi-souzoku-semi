@@ -21,6 +21,6 @@ function display_nagaoka_pdf_shortcode() {
     return wp_get_attachment_url($pdf_url);
   }
 }
-add_shortcode('nigataPdf', 'display_nigata_pdf_shortcode');
+add_shortcode('nagaokaPdf', 'display_nagaoka_pdf_shortcode');
 
 ?>
