@@ -231,29 +231,33 @@
         </div>
       </div>
       <div class="p-top-news__container.right">
-      <ul class="news-list">
-        <li class="rt">
-          <a href="">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-      </ul>
+        <?php
+          $args = array(
+            'post_type'      => 'newsrelease',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'paged'          => $paged
+          );
+          $query = new WP_Query( $args );
+            if ( $query->have_posts() ) :
+        ?>
+        <ul class="news-list">
+          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+          <li class="rt">
+            <a href="<?php the_permalink(); ?>">
+              <p><?php echo get_the_date('Y.m.d'); ?></p>
+              <?php
+                // カスタムタクソノミーのカテゴリを表示
+                $terms = get_the_terms(get_the_ID(), 'newsrelease_cat');
+                $terms = json_decode(json_encode($terms), true);
+              ?>
+              <p class="news-list__title"><?php echo $terms[0]['name']; ?></p>
+              <span><?php the_title() ?></span>
+            </a>
+          </li>
+          <?php endwhile; ?>
+        </ul>
       </div>
     </div>
   </section>
