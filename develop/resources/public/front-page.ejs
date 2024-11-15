@@ -233,7 +233,7 @@
       <div class="p-top-news__container.right">
         <?php
           $args = array(
-            'post_type'      => 'newsrelease',
+            'post_type'      => 'news',
             'posts_per_page' => 3,
             'post_status'    => 'publish',
             'orderby'        => 'date',
@@ -249,7 +249,7 @@
               <p><?php echo get_the_date('Y.m.d'); ?></p>
               <?php
                 // カスタムタクソノミーのカテゴリを表示
-                $terms = get_the_terms(get_the_ID(), 'newsrelease_cat');
+                $terms = get_the_terms(get_the_ID(), 'news_cat');
                 $terms = json_decode(json_encode($terms), true);
               ?>
               <p class="news-list__title"><?php echo $terms[0]['name']; ?></p>
