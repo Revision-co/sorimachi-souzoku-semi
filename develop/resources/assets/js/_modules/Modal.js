@@ -10,12 +10,12 @@ class Modal {
     $("." + this.el).on('click', function(e) {
       e.preventDefault();
       $(`[data-id='${$(this).attr('id')}']`).addClass('is-active');
-      scrollBan();
+      scrollBanOpen();
     })
 
     $("." + this.el + "-close").on('click', function() {
       $('.js-modal-container').removeClass('is-active');
-      scrollBan();
+      scrollBanClase();
     })
   }
 }
