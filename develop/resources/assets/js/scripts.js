@@ -145,8 +145,8 @@ $(window).on('loading', () => {
 
 $(document).ready(function() {
   $(".js-toggle").on("click", function() {
-    $(".p-drawer__submenu-list li:not(:first-child").slideToggle();
-    $(".p-drawer__submenu-list li:first-of-type").toggleClass("open");
+    $(this).find("li:not(:first-child)").slideToggle();
+    $(this).find("li:first-of-type").toggleClass("open");
   });
 
   $(".js-drawer").on("click", function() {
