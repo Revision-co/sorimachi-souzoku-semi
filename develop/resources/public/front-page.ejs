@@ -232,37 +232,6 @@
         </div>
       </div>
       <div class="p-top-news__container.right">
-<<<<<<< HEAD
-      <ul class="news-list">
-        <li class="">
-          <a href="<?php echo home_url('/news/'); ?>">
-            <div class="rt">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            </div>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-        <li class="">
-          <a href="<?php echo home_url('/news/'); ?>">
-            <div class="rt">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            </div>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-        <li class="">
-          <a href="<?php echo home_url('/news/'); ?>">
-            <div class="rt">
-            <p>2024.12.01</p>
-            <p class="news-list__title">お知らせ</p>
-            </div>
-            <span>『＜8月開催＞社長と会社にお金を残す方法セミナー』についてあ…</span>
-          </a>
-        </li>
-      </ul>
-=======
         <?php
           $args = array(
             'post_type'      => 'news',
@@ -276,22 +245,23 @@
         ?>
         <ul class="news-list">
           <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-          <li class="rt">
+          <li>
             <a href="<?php the_permalink(); ?>">
-              <p><?php echo get_the_date('Y.m.d'); ?></p>
-              <?php
-                // カスタムタクソノミーのカテゴリを表示
-                $terms = get_the_terms(get_the_ID(), 'news_cat');
-                $terms = json_decode(json_encode($terms), true);
-              ?>
-              <p class="news-list__title"><?php echo $terms[0]['name']; ?></p>
+              <div class="rt">
+                <p><?php echo get_the_date('Y.m.d'); ?></p>
+                <?php
+                  // カスタムタクソノミーのカテゴリを表示
+                  $terms = get_the_terms(get_the_ID(), 'news_cat');
+                  $terms = json_decode(json_encode($terms), true);
+                ?>
+                <p class="news-list__title"><?php echo $terms[0]['name']; ?></p>
+              </div>
               <span><?php the_title() ?></span>
             </a>
           </li>
           <?php endwhile; ?>
         </ul>
         <?php endif; ?>
->>>>>>> 103264a90a9c49b2ce56eabd334ed0d4abc92d20
       </div>
     </div>
   </section>
