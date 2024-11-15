@@ -679,6 +679,150 @@
   opacity: 1;
 }
 
+// ここから複製
+.p-drawer__submenu-list02 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto auto auto auto auto auto;
+  row-gap: 0.6rem;
+}
+
+.p-drawer__submenu-list02 li {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.p-drawer__submenu-list02 li:first-of-type {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02 li:nth-of-type(2) {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  margin-top: 0.4rem;
+}
+
+.p-drawer__submenu-list02 li:nth-of-type(3) {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02 li:nth-of-type(4) {
+  grid-row: 4/5;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02 li:nth-of-type(5) {
+  grid-row: 5/6;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02 li:nth-of-type(6) {
+  grid-row: 6/7;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02 li a {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-out;
+}
+
+.p-drawer__submenu-list02 li a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.8rem;
+  height: 0.2rem;
+  content: "";
+  background: #fff;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
+
+.p-drawer__submenu-list02 li a:hover {
+  opacity: 1;
+}
+
+.p-drawer__submenu-list02-pc {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto auto auto auto auto auto;
+  row-gap: 0.6rem;
+}
+
+.p-drawer__submenu-list02-pc li {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.p-drawer__submenu-list02-pc li:first-of-type {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02-pc li:nth-of-type(2) {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  margin-top: 0.4rem;
+}
+
+.p-drawer__submenu-list02-pc li:nth-of-type(3) {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02-pc li:nth-of-type(4) {
+  grid-row: 4/5;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02-pc li:nth-of-type(5) {
+  grid-row: 5/6;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02-pc li:nth-of-type(6) {
+  grid-row: 6/7;
+  grid-column: 1/2;
+}
+
+.p-drawer__submenu-list02-pc li a {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-out;
+}
+
+.p-drawer__submenu-list02-pc li a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.8rem;
+  height: 0.2rem;
+  content: "";
+  background: #fff;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
+
+.p-drawer__submenu-list02-pc li a:hover {
+  opacity: 1;
+}
+// ここまで複製
+
 .p-drawer__sns {
   display: box;
   display: flexbox;

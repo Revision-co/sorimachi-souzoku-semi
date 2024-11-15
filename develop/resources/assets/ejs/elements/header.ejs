@@ -12,12 +12,12 @@
       </h1>
       <nav class="p-header__nav">
         <ul class="p-header__nav-list">
-          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/about/">当センターについて</a></li>
+          <!-- <li><a class="p-header__nav-item" href="<?= $home_url; ?>/about/">当センターについて</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/feature/">サービスの流れ</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/price/">料金</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/faq/">よくあるご質問	</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/company/">会社案内</a></li>
-          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/access/">アクセス</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/access/">アクセス</a></li> -->
           <li><a class="c-header__contact" href="<?= $home_url; ?>/contact/">
             <!-- ic-mail -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.205 15.951">
@@ -64,24 +64,28 @@
         <div class="p-drawer__content pc-only">
           <ul class="p-drawer__list">
             <li><a href="<?= $home_url; ?>/">トップ</a></li>
-            <li><a href="<?= $home_url; ?>/about/">当センターについて</a></li>
-            <li><a href="<?= $home_url; ?>/feature/">当センターの特徴</a></li>
-            <li><a href="<?= $home_url; ?>/service/">サービスの流れ</a></li>
-            <li><a href="<?= $home_url; ?>/price/">料金について</a></li>
-            <li><a href="<?= $home_url; ?>/faq/">よくあるご質問</a></li>
-            <li><a href="<?= $home_url; ?>/examples/">相談事例</a></li>
-            <li><a href="<?= $home_url; ?>/company/">会社案内</a></li>
-            <li><a href="<?= $home_url; ?>/access/">アクセス</a></li>
-            <li><a href="<?= $home_url; ?>/contact/">お問い合わせ</a></li>
-            <li><a href="<?= $home_url; ?>/consultations/">無料相談のご案内</a></li>
+            <li><a href="<?php echo home_url('/about/'); ?>">私たちについて</a></li>
+            <li><a href="<?php echo home_url('/service/'); ?>">サービスの流れ</a></li>
+            <li><a href="<?php echo home_url('/price/'); ?>">料金について</a></li>
+            <li><a href="<?php echo home_url('/faq//'); ?>">よくあるご質問</a></li>
+            <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
+            <li><a href="<?php echo home_url('/consultations/'); ?>">無料相談のご案内</a></li>
+            <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
+            <li>
+              <ul class="p-drawer__submenu-list-pc">
+                <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+              </ul>
+              <li><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
+              <li><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+            </li>
             <li>
               <ul class="p-drawer__submenu-list-pc">
                 <li>お役立ち情報</li>
-                <li><a href="<?= $home_url; ?>/flows/">相続手続きの流れ</a></li>
-                <li><a href="<?= $home_url; ?>/list/">相続手続きやることリスト</a></li>
-                <li><a href="<?= $home_url; ?>/tax/">相続税について</a></li>
-                <li><a href="<?= $home_url; ?>/questions/">相続手続きＱ＆Ａ</a></li>
-                <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
+                <!-- <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li> -->
               </ul>
             </li>
           </ul>
@@ -129,24 +133,28 @@
         <div class="p-drawer__content sp-only">
           <ul class="p-drawer__list">
             <li><a href="<?= $home_url; ?>/">トップ</a></li>
-            <li><a href="<?= $home_url; ?>/about/">当センターについて</a></li>
-            <li><a href="<?= $home_url; ?>/feature/">当センターの特徴</a></li>
-            <li><a href="<?= $home_url; ?>/service/">サービスの流れ</a></li>
-            <li><a href="<?= $home_url; ?>/price/">料金について</a></li>
-            <li><a href="<?= $home_url; ?>/faq/">よくあるご質問</a></li>
-            <li><a href="<?= $home_url; ?>/examples/">相談事例</a></li>
-            <li><a href="<?= $home_url; ?>/company/">会社案内</a></li>
-            <li><a href="<?= $home_url; ?>/access/">アクセス</a></li>
-            <li><a href="<?= $home_url; ?>/contact/">お問い合わせ</a></li>
-            <li><a href="<?= $home_url; ?>/consultations/">無料相談のご案内</a></li>
+            <li><a href="<?php echo home_url('/about/'); ?>">私たちについて</a></li>
+            <li>
+              <ul class="p-drawer__submenu-list js-toggle">
+                <li>無料相談のご案内</li>
+                <li><a href="<?php echo home_url('/service/'); ?>">サービスの流れ</a></li>
+                <li><a href="<?php echo home_url('/price/'); ?>">料金について</a></li>
+                <li><a href="<?php echo home_url('/faq/'); ?>">よくあるご質問</a></li>
+                <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
+              </ul>
+            </li>
+            <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
+            <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+            <li><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
+            <li><a href="<?php echo home_url('/contact//'); ?>">お問い合わせ</a></li>
             <li>
               <ul class="p-drawer__submenu-list js-toggle">
                 <li>お役立ち情報</li>
-                <li><a href="<?= $home_url; ?>/flows/">相続手続きの流れ</a></li>
-                <li><a href="<?= $home_url; ?>/list/">相続手続きやることリスト</a></li>
-                <li><a href="<?= $home_url; ?>/tax/">相続税について</a></li>
-                <li><a href="<?= $home_url; ?>/questions/">相続手続きＱ＆Ａ</a></li>
-                <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
+                <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
+                <!-- <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li> -->
               </ul>
             </li>
           </ul>

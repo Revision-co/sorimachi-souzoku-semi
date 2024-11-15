@@ -39,32 +39,64 @@
           </svg>
         </a>
         <p>〒950-0084<br>新潟市中央区明石1-7-17 ソリマチ第7ビル6F<br>
-          <a class="info-tel" href="tel:+025-255-1600">Tel：025-255-1600</a><span class="pc-only">Fax：025-255-1602</span>
+          <a class="info-tel" href="tel:+025-255-1600">Tel：025-255-1600</a><span class="pc-only">Fax：025-255-1602</span><br><a href="<?php echo home_url('/policy'); ?>"><span class="pc-only mlm">プライバシーポリシー</span></a>
         </p>
       </div>
-      <ul class="p-footer__list">
+      <!-- pc -->
+      <ul class="p-footer__list  pc-only">
         <li><a href="<?php echo home_url('/'); ?>">トップ</a></li>
-        <li><a href="<?php echo home_url('/about/'); ?>">当センターについて</a></li>
-        <li><a href="<?php echo home_url('/feature/'); ?>">当センターの特徴</a></li>
+        <li><a href="<?php echo home_url('/about/'); ?>">私たちについて</a></li>
         <li><a href="<?php echo home_url('/service/'); ?>">サービスの流れ</a></li>
         <li><a href="<?php echo home_url('/price/'); ?>">料金について</a></li>
-        <li><a href="<?php echo home_url('/faq/'); ?>">よくあるご質問</a></li>
-        <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
-        <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
-        <li><a href="<?php echo home_url('/access/'); ?>">アクセス</a></li>
-        <li><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+        <li><a href="<?php echo home_url('/faq//'); ?>">よくあるご質問</a></li>
+        <li><a href="<?php echo home_url('/examples//'); ?>">相談事例</a></li>
         <li><a href="<?php echo home_url('/consultations/'); ?>">無料相談のご案内</a></li>
+        <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
+        <li>
+          <ul class="p-footer__submenu-list">
+            <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+          </ul>
+        </li>
+        <li class="pc"><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
+        <li class="pc"><a href="<?php echo home_url('/contact//'); ?>">お問い合わせ</a></li>
         <li>
           <ul class="p-footer__submenu-list pc-only">
             <li>お役立ち情報</li>
-            <li><a href="<?php echo home_url('/flows/'); ?>">相続手続きの流れ</a></li>
-            <li><a href="<?php echo home_url('/list/'); ?>">相続手続きやることリスト</a></li>
-            <li><a href="<?php echo home_url('/tax/'); ?>">相続税について</a></li>
-            <li><a href="<?php echo home_url('/questions/'); ?>">相続手続きＱ＆Ａ</a></li>
-            <li><a href="<?php echo home_url('/manga/'); ?>">マンガでわかる相続手続支援センター</a></li>
+            <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
+            <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
+            <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
+            <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
           </ul>
         </li>
       </ul>
+      <!-- sp -->
+      <div class="ft-flex sp-only">
+        <ul class="p-footer__list2">
+          <li><a href="<?php echo home_url('/about/'); ?>">私たちについて</a></li>
+          <li><a href="<?php echo home_url('/service/'); ?>">サービスの流れ</a></li>
+          <li><a href="<?php echo home_url('/price/'); ?>">料金について</a></li>
+          <li><a href="<?php echo home_url('/faq//'); ?>">よくあるご質問</a></li>
+          <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
+          <li><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
+          <li><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+          <li><a href="<?php echo home_url('/policy/'); ?>">プライバシーポリシー</a></li>
+        </ul>
+        <ul class="p-footer__list2">
+          <li><a href="<?php echo home_url('/consultations/'); ?>">無料相談のご案内</a></li>
+          <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
+          <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+          <li>
+            <ul class="p-footer__submenu-list">
+              <li>お役立ち情報</li>
+              <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
+              <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
+              <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
+              <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+
     </div>
   </div>
   <!-- common bottom -->

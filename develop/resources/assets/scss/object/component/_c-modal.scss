@@ -8,6 +8,7 @@
   pointer-events: none;
   opacity: 0;
   transition: var(--transition);
+  z-index: 200;
 
   &.is-active {
     pointer-events: inherit;
@@ -45,7 +46,7 @@
 
   &__close {
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     right: 2rem;
     width: 6rem;
     height: 6rem;
