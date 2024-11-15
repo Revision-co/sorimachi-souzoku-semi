@@ -7,7 +7,7 @@ class Modal {
     }
   }
   event(){
-    $("." + this.el).on('click', function(e) {
+    $("." + this.el).off('click').one('click', function(e) {
       e.preventDefault();
       $(`[data-id='${$(this).attr('id')}']`).addClass('is-active');
       scrollBanOpen();
