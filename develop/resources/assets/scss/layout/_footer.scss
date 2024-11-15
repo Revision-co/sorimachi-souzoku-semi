@@ -732,7 +732,9 @@
 }
 
 .p-footer__submenu-list li:nth-of-type(2){
-  margin-top: 1.4rem;
+  @media (--mobile) {
+    margin-top: 1.4rem;
+  }
 }
 .mlm{
   margin-left: 0 !important;
