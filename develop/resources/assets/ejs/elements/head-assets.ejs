@@ -1,5 +1,17 @@
 <link href="<?php echo get_template_directory_uri(); ?>/common/css/styles.css" rel="stylesheet">
+<?php
+  $page = get_page_by_path('notfound');
+  $id = $page->ID;
+
+  $upload_dir = wp_upload_dir();
+  $upload_path = $upload_dir['basedir']; // サーバー上の絶対パス
+  $upload_url = $upload_dir['baseurl']; // サイトURLに基づくURLパス
+
+  echo "アップロードフォルダのパス: " . $upload_path . "<br>";
+  echo "アップロードフォルダのURL: " . $upload_url;
+?>
 <?php if (is_404()) : ?>
+<link href="<?= $upload_url; ?>/elementor/css/post-<?= $id; ?>.css" rel="stylesheet">
 <title>ページが見つかりませんでした。</title>
 <?php else: ?>
 <?php wp_head(); ?>
