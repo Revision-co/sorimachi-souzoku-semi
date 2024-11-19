@@ -738,4 +738,9 @@
 }
 .mlm{
   margin-left: 0 !important;
+  transition: opacity 0.3s ease-out;
+  
+  &:hover{
+    opacity: 0.6;
+  }
 }
