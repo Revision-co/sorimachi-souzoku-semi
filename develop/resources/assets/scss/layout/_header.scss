@@ -1061,4 +1061,88 @@
     padding-top: 4.1rem;
     padding-bottom: 6rem;
   }
+
+  
+  // ここから下複製
+
+  .p-drawer__submenu-list02 {
+    position: relative;
+    row-gap: 0;
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(1) {
+    position: relative;
+    display: block;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    padding: 1.6rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    border-bottom: 0.1rem solid rgb(255 255 255 / 50%);
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(1)::after {
+    transition: all 0.3s ease-out;
+    transform: rotate(90deg);
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(1).open::after {
+    transform: rotate(0deg);
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(2) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    margin-top: 0;
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(3) {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(4) {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(5) {
+    grid-row: 5/6;
+    grid-column: 1/2;
+  }
+
+  .p-drawer__submenu-list02 li:nth-of-type(6) {
+    grid-row: 6/7;
+    grid-column: 1/2;
+  }
+
+  .p-drawer__submenu-list02 li a {
+    padding: 1.35rem 1rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .p-drawer__submenu-list02 li a::before {
+    top: 100%;
+    bottom: 0;
+    left: 50%;
+    max-width: 33rem;
+    transform: translate(-50%, 0);
+  }
+
+  .p-drawer__submenu-list02 li a::before:first-of-type {
+    display: none;
+  }
+
+  .p-drawer__sns {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 4.1rem;
+    padding-bottom: 6rem;
+  }
 }
+
+
