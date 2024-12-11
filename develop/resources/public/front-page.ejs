@@ -116,9 +116,9 @@
           <p class="c-card__gray-text">無料相談についてはこちら</p>
           <p class="c-card__gray-subtext">CONSULTATION</p>
         </a>
-        <a href="tel:+025-255-1600" class="c-consultations-card__yellow c-card-tel">
+        <a href="tel:0120-786-339" class="c-consultations-card__yellow c-card-tel">
           <p class="c-card-tel__text">電話で予約する</p>
-          <p class="c-card-tel__number">025-255-1600</p>
+          <p class="c-card-tel__number">0120-786-339</p>
           <p class="c-card-tel__subtext">【受付時間】9:00〜18:00(土日祝を除く)</p>
         </a>
         <a href="<?php echo home_url('/contact/'); ?>" class="c-consultations-card__yellow c-card-calendar">
@@ -251,7 +251,7 @@
                 <p><?php echo get_the_date('Y.m.d'); ?></p>
                 <?php
                   // カスタムタクソノミーのカテゴリを表示
-                  $terms = get_the_terms(get_the_ID(), 'news_cat');
+                  $terms = get_the_terms(get_the_ID(), 'news-cat');
                   $terms = json_decode(json_encode($terms), true);
                 ?>
                 <p class="news-list__title"><?php echo $terms[0]['name']; ?></p>
@@ -275,9 +275,9 @@
     <div class="l-inner l-top-contact__inner">
       <h3 class="p-top-contact__title section-title js-titleUp">お問い合わせ<span>CONTACT</span></h3>
       <div class="p-contact-wrap__cards">
-        <a href="tel:+025-255-1600" class="c-contact-card__yellow c-card-tel">
+        <a href="tel:0120-786-339" class="c-contact-card__yellow c-card-tel">
           <p class="c-card-tel__text">電話で予約する</p>
-          <p class="c-card-tel__number">025-255-1600</p>
+          <p class="c-card-tel__number">0120-786-339</p>
           <p class="c-card-tel__subtext">【受付時間】9:00〜18:00(土日祝を除く)</p>
         </a>
         <a href="<?php echo home_url('/contact/'); ?>" class="c-contact-card__yellow c-card-calendar">
