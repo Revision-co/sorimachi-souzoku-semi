@@ -12,12 +12,12 @@
       </h1>
       <nav class="p-header__nav">
         <ul class="p-header__nav-list">
-          <!-- <li><a class="p-header__nav-item" href="<?= $home_url; ?>/about/">当センターについて</a></li>
-          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/feature/">サービスの流れ</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/about/">私たちについて</a></li>
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/service/">サービスの流れ</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/price/">料金</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/faq/">よくあるご質問	</a></li>
           <li><a class="p-header__nav-item" href="<?= $home_url; ?>/company/">会社案内</a></li>
-          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/access/">アクセス</a></li> -->
+          <li><a class="p-header__nav-item" href="<?= $home_url; ?>/company/#access">アクセス</a></li>
           <li><a class="c-header__contact" href="<?= $home_url; ?>/contact/">
             <!-- ic-mail -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.205 15.951">
@@ -67,13 +67,13 @@
             <li><a href="<?php echo home_url('/about/'); ?>">私たちについて</a></li>
             <li><a href="<?php echo home_url('/service/'); ?>">サービスの流れ</a></li>
             <li><a href="<?php echo home_url('/price/'); ?>">料金について</a></li>
-            <li><a href="<?php echo home_url('/faq//'); ?>">よくあるご質問</a></li>
+            <li><a href="<?php echo home_url('/faq/'); ?>">よくあるご質問</a></li>
             <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
             <li><a href="<?php echo home_url('/consultations/'); ?>">無料相談のご案内</a></li>
             <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
             <li>
               <ul class="p-drawer__submenu-list-pc">
-                <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+                <li><a href="<?= $home_url; ?>/company/#access">アクセス</a></li>
               </ul>
               <li><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
               <li><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
@@ -81,17 +81,17 @@
             <li>
               <ul class="p-drawer__submenu-list-pc">
                 <li>お役立ち情報</li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
+                <li><a href="<?php echo home_url('/flow/'); ?>">相続手続きの流れ</a></li>
+                <li><a href="<?php echo home_url('/list/'); ?>">相続手続きやることリスト</a></li>
+                <li><a href="<?php echo home_url('/tax/'); ?>">相続税について</a></li>
+                <li><a href="<?php echo home_url('/questions/'); ?>">相続手続きＱ＆Ａ</a></li>
                 <!-- <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li> -->
               </ul>
             </li>
           </ul>
           <div class="p-drawer__sns">
             <!-- facebook -->
-            <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_12" data-name="グループ 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3744" data-name="長方形 3744" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -99,9 +99,9 @@
                 </g>
                 <path id="パス_71" data-name="パス 71" d="M51.673,166.8l.658-4.288H48.217v-2.783a2.144,2.144,0,0,1,2.417-2.316H52.5v-3.65a22.82,22.82,0,0,0-3.321-.29c-3.388,0-5.6,2.053-5.6,5.771v3.268H39.815V166.8h3.766v10.365a15,15,0,0,0,4.636,0V166.8Z" transform="translate(-26.046 -145.206)" fill="#fff"/>
               </svg>
-            </a>
+            </a> -->
             <!-- instagram -->
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="http://" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_16" data-name="グループ 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -113,9 +113,9 @@
                   <ellipse id="楕円形_3" data-name="楕円形 3" cx="1.164" cy="1.172" rx="1.164" ry="1.172" transform="translate(14.102 3.6)" fill="#fff"/>
                 </g>
               </svg>
-            </a>
+            </a> -->
             <!-- x -->
-            <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.sozoku-tetsuzuki.jp%2F&linkname=Home&linknote=" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_32185" data-name="グループ 32185" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -126,7 +126,7 @@
                   <path id="パス_52631" data-name="パス 52631" d="M18.957,18.419H16.838L6.376,3.3h2.2Z" transform="translate(-4.084 -2.114)" fill="none"/>
                 </g>
               </svg>
-            </a>
+            </a> -->
           </div>
         </div>
         <!-- drawer menu sp -->
@@ -140,23 +140,23 @@
             <li><a href="<?php echo home_url('/faq/'); ?>">よくあるご質問</a></li>
             <li><a href="<?php echo home_url('/examples/'); ?>">相談事例</a></li>
             <li><a href="<?php echo home_url('/company/'); ?>">会社案内</a></li>
-            <li><a href="https://www.sozoku-tetsuzuki.jp/access/" target="_blank">アクセス</a></li>
+            <li><a href="<?= $home_url; ?>/company/#access">アクセス</a></li>
             <li><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
             <li><a href="<?php echo home_url('/contact//'); ?>">お問い合わせ</a></li>
             <li>
               <ul class="p-drawer__submenu-list js-toggle">
                 <li>お役立ち情報</li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/flows/" target="_blank">相続手続きの流れ</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/list/" target="_blank">相続手続きやることリスト</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/tax/" target="_blank">相続税について</a></li>
-                <li><a href="https://www.sozoku-tetsuzuki.jp/questions/" target="_blank">相続手続きＱ＆Ａ</a></li>
+                <li><a href="<?php echo home_url('/flow/'); ?>">相続手続きの流れ</a></li>
+                <li><a href="<?php echo home_url('/list/'); ?>">相続手続きやることリスト</a></li>
+                <li><a href="<?php echo home_url('/tax/'); ?>">相続税について</a></li>
+                <li><a href="<?php echo home_url('/questions/'); ?>">相続手続きＱ＆Ａ</a></li>
                 <!-- <li><a href="<?= $home_url; ?>/manga/">マンガでわかる相続手続支援センター</a></li> -->
               </ul>
             </li>
           </ul>
           <div class="p-drawer__sns">
             <!-- facebook -->
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://www.facebook.com/sozoku.tetsuzuki/" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_12" data-name="グループ 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3744" data-name="長方形 3744" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -164,9 +164,9 @@
                 </g>
                 <path id="パス_71" data-name="パス 71" d="M51.673,166.8l.658-4.288H48.217v-2.783a2.144,2.144,0,0,1,2.417-2.316H52.5v-3.65a22.82,22.82,0,0,0-3.321-.29c-3.388,0-5.6,2.053-5.6,5.771v3.268H39.815V166.8h3.766v10.365a15,15,0,0,0,4.636,0V166.8Z" transform="translate(-26.046 -145.206)" fill="#fff"/>
               </svg>
-            </a>
+            </a> -->
             <!-- instagram -->
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="http://" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_16" data-name="グループ 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -178,9 +178,9 @@
                   <ellipse id="楕円形_3" data-name="楕円形 3" cx="1.164" cy="1.172" rx="1.164" ry="1.172" transform="translate(14.102 3.6)" fill="#fff"/>
                 </g>
               </svg>
-            </a>
+            </a> -->
             <!-- x -->
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="http://" target="_blank" rel="noopener noreferrer">
               <svg id="グループ_32185" data-name="グループ 32185" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.938 40.938">
                 <g id="長方形_3745" data-name="長方形 3745" transform="translate(0)" fill="none" stroke="#fff" stroke-width="1">
                   <rect width="40.938" height="40.938" rx="20" stroke="none"/>
@@ -191,7 +191,7 @@
                   <path id="パス_52631" data-name="パス 52631" d="M18.957,18.419H16.838L6.376,3.3h2.2Z" transform="translate(-4.084 -2.114)" fill="none"/>
                 </g>
               </svg>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
