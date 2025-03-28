@@ -1,1 +1,0 @@
-# sorimachi-souzoku-semi
