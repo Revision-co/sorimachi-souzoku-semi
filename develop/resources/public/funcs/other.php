@@ -103,4 +103,6 @@
     } return false;
   }
   
+  // タイトルタグの自動挿入を有効化
+  add_theme_support( 'title-tag' );
 ?>
